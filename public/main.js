@@ -7,34 +7,27 @@ let laps = document.getElementById("laps");
 let lapsDisplay = document.getElementById("lapsDisplay");
 
 //stopwatch functionality
-function stopwatch() 
-{
+function stopwatch() {
 	sseconds++;
-	if(sseconds == 100)
-	{
+	if (sseconds == 100) {
 		sseconds = 0;
 		seconds++;
-		if(seconds / 60 == 1)
-		{
+		if (seconds / 60 == 1) {
 			seconds = 0;
 			minutes++;
-			if(minutes / 60 == 1)
-			{
+			if (minutes / 60 == 1) {
 				minutes = 0;
 				hours++;
 			}
 		}
-    }
-    
-    //to put the zeroes in front if its a single digit    
-    function frontZero(x, y) 
-	{
-		if(x < 10)
-		{
+	}
+
+	//to put the zeroes in front if its a single digit    
+	function frontZero(x, y) {
+		if (x < 10) {
 			y = "0" + x.toString();
 		}
-		else
-		{
+		else {
 			y = x;
 		}
 		return y;
@@ -48,40 +41,32 @@ function stopwatch()
 }
 function clickStartStop() //when the startStop button is clicked
 {
-	if(running == false)
-	{
-		interval = window.setInterval(stopwatch, 1);
+	if (running == false) {
+		interval = window.setInterval(stopwatch, 10);
 		startStop.innerHTML = "STOP";
 		running = true;
 	}
-	else
-	{
+	else {
 		window.clearInterval(interval);
 		startStop.innerHTML = "START";
 		running = false;
 	}
 }
 //when the reset button is clicked
-function clickReset() 
-{
+function clickReset() {
 	sseconds = 0;
 	seconds = 0;
 	hours = 0;
 	minutes = 0;
 	display.innerHTML = "00:00:00:00"
-	if(running == true)
-	{
+	if (running == true) {
 		window.clearInterval(interval);
 		running = false;
 	}
 	startStop.innerHTML = "START";
 	lapsDisplay.innerHTML = null;
 }
-function clickLaps() //when the laps button is clicked
-{
+//when the laps button is clicked
+function clickLaps() {
 	lapsDisplay.innerHTML += " " + display.innerHTML + "<br>";
 }
-//actions below
-startStop.onclick = clickStartStop;
-reset.onclick = clickReset;
-laps.onclick = clickLaps;
