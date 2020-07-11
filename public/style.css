@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+  }
+  #stopwatch
+  {
+    left: 50%;
+    transform: translate(-50%, 0);
+      background-color: grey;
+      z-index: -2;
+    position: absolute;
+    width: 400px;
+      margin: 10px;
+      text-align: center;
+      border-radius: 5px;
+      font-family: open-sans;
+  }
+  #display
+  {
+      background-color: hsl(0, 0%, 20%);
+      color: white;
+      margin: 10px;
+      font-size: 4vw;
+      padding: 5px 20px;
+  }
+  .swbutton
+  {
+      font-size: 2vw;
+      padding: 10px;
+      margin: 0 5px;
+      width: 100px;
+      border: 0;
+      border-radius: 20px;
+  }
+  .swbutton:hover
+  {
+      color: white;
+      background-color: black;
+  }
+  #info
+  {
+      height: 400px;
+      background-color: black;
+      margin: 10px;
+      overflow: auto;
+  }
+  #lapsDisplay
+  {
+      font-size: 3vw;
+      color: white;
+      margin: 0;
+  }
